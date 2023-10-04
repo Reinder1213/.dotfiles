@@ -1,1 +1,1 @@
-Some dotfiles (Work In Progress)
+Some dotfiles & handy tools (Work In Progress)
