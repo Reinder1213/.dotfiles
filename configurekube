@@ -1,0 +1,22 @@
+#!/bin/bash
+
+MYHOME=~
+
+case $1 in
+    prod)
+        export KUBECONFIG="$MYHOME/.kube/yipyip_prod"
+        ;;
+    test)
+        export KUBECONFIG="$MYHOME/.kube/yipyip_test_staging"
+        ;;
+    openr)
+        export KUBECONFIG="$MYHOME/.kube/openr"
+        ;;
+    *)
+        echo "Arg1 must be test, prod or openr"
+        ;;
+esac
+
+alias kubectl="kubectl -n $2"
+
+echo "kubectl config set to cluster $1, namespace $2"
